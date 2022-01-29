@@ -253,8 +253,8 @@ div.tocify {
 </div>
 
 
-<div id="home-machine-learning-in-mlr3-data-cleaning-count-dist.-data-visualization" class="section level5">
-<h5><a href="https://jrazo7063.github.io/Homepage.html">Home</a> | <a href="https://jrazo7063.github.io/mlr3.html">Machine Learning in mlr3</a> | <a href="https://jrazo7063.github.io/Data-Cleaning.html">Data Cleaning</a> | <a href="https://www.youtube.com/watch?v=4rVyLQeVDI4">Count Dist.</a> | <a href="https://www.youtube.com/watch?v=4hu7_zcG83Q">Data Visualization</a></h5>
+<div id="home-machine-learning-in-mlr3-statistical-learning-count-dist.-data-visualization" class="section level5">
+<h5><a href="https://jrazo7063.github.io/Homepage.html">Home</a> | <a href="https://jrazo7063.github.io/mlr3.html">Machine Learning in mlr3</a> | <a href="https://jrazo7063.github.io/DissCode.html">Statistical Learning</a> | <a href="https://www.youtube.com/watch?v=4rVyLQeVDI4">Count Dist.</a> | <a href="https://www.youtube.com/watch?v=4hu7_zcG83Q">Data Visualization</a></h5>
 <p>Data Cleaning is a topic that is often requested at the SCC and has begged the question, “Why is it not covered in our intro research courses?” Though it would be intuitive to integrate into the stats sequence, the actual application is often difficult to implement (In other words, easier said than done).</p>
 <p>The reason for this is because data cleaning isn’t simply an operation, but a process; a process that varies widely based on your specific data structure and what you’re trying to accomplish. It’s further complicated that data cleaning often takes multiple steps to get your data ready to implement analysis.</p>
 <p>Given all of these challenges, the goal of this page is to provide a sample of common data cleaning steps using quasi-real-world data (i.e. I made it up, but it looks pretty legit) that you may use to help guide your data cleaning adventures. As always, if you have any questions or would like to see more similar content, feel free to reach out to the SCC via <a href="mailto:scc@paloaltou.edu">email</a> or <a href="http://scc.paloaltou.edu/">Request an appointment</a>. So without further ado, let’s start coding.</p>
@@ -271,7 +271,7 @@ div.tocify {
 <pre><code>## package &#39;haven&#39; successfully unpacked and MD5 sums checked
 ## 
 ## The downloaded binary packages are in
-##  C:\Users\josep\AppData\Local\Temp\RtmpikRRwf\downloaded_packages</code></pre>
+##  C:\Users\josep\AppData\Local\Temp\Rtmp4yTiKn\downloaded_packages</code></pre>
 <pre class="r"><code>library(haven)</code></pre>
 <p>Now that we have that ready to go, we’re gonna want to read in our data using the <code>read_sav()</code> function. But remember, we have to create an object that we can call back while cleaning. To do this is simple, simply give your data a name, like <code>data</code> and use the assignment operator <code>&lt;-</code> to denote an object.</p>
 <pre class="r"><code>data &lt;- read_sav(file = &quot;data.sav&quot;)</code></pre>
@@ -552,7 +552,7 @@ The interval function allows you to calculate an interval between 2 timepoints. 
 <pre class="r"><code>data$current &lt;- rep(Sys.time(), nrow(data))
 
 data$current[1]</code></pre>
-<pre><code>## [1] &quot;2022-01-28 17:39:51 PST&quot;</code></pre>
+<pre><code>## [1] &quot;2022-01-28 17:45:01 PST&quot;</code></pre>
 <p>Now that we’re here, I might as well talk about the <code>rep</code> command. This stands for “repeat” and is a good way to create repetitions in R. Right now, I’m saying make a new variable called <code>current</code> and fill it with a series of the current date and time, for the number of rows in <code>data</code>.</p>
 <p>Back to substring. We’re gonna use the command <code>substr()</code> to keep only the date (2021-12-07). The arguments read: 1) what do we want to subset 2) at which character do we start 3) at which character do we stop. Since the date starts at 1 and ends at 10, we’ll go ahead and put those arguments in.</p>
 <pre class="r"><code>data$current_date&lt;- substr(data$current,1,10)
