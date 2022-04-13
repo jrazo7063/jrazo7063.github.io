@@ -1,0 +1,44 @@
+<?php
+if($_POST["test"]) {
+mail("joseph.razo15@gmail.com", "Survey",
+$_POST["testing"]. "From: jmatthewrazo@yahoo.com");
+}
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Joseph Razo, MS</title>
+    <style>
+      body {background-color: #F8F8FF; text-align: center;
+                  color: #708090}
+
+      #myVideo {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      left:0;
+      right: 0;
+      top:0;
+      bottom: 0;
+      z-index:-1;
+      filter: opacity(60%)}
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="C:\Users\josep\Desktop\Logos\wallious.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <h1>Joseph M. Razo, MS</h1>
+    <p>
+      <a href=https://www.linkedin.com/in/jmrazo/><img src="C:\Users\josep\Desktop\Logos\LI.png" width=10 height=10 style="margin:5px">
+      <a href=https://jrazo7063.github.io/Homepage.html>Portfolio</a>
+    </p><br>
+    <form action="mailto:joseph.razo15@gmail.com" method="post">
+      <label for="test">Trying some shit out</label>
+      <input type="text" name="test" id="test">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
