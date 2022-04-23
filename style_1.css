@@ -81,7 +81,7 @@ nav {
 }
 
 .d {
-  background: linear-gradient(to top, rgba(255,255,255,.9), rgba(255,255,255,.6)), url(images/background.jpg);
+  background: linear-gradient(to top, rgba(255,255,255,.9), rgba(255,255,255,.6)), url('https://www.dropbox.com/s/5d4dlatysyxq29j/background.jpg?raw=1');
   grid-row: 3/9;
   grid-column: 1/span 12; 
 }
