@@ -101,7 +101,7 @@ a:active { text-decoration: none; }
     background: black;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 768px) {
     .nav-container{
         position: relative;
     }
@@ -109,7 +109,7 @@ a:active { text-decoration: none; }
     .nav-menu {
         display: grid;
         grid-template-columns: auto;
-        background: red;
+        background: rgba(217,221,241,.83);
         margin: 0;
         width: 100%;
         position: absolute;
@@ -160,7 +160,7 @@ a:active { text-decoration: none; }
         border: none;
         padding: 0;
         border-radius: 0;
-        background-color: red;
+        background-color: rgba(217,221,241,.83);
         color: white;
         transition: all .4s ease-out;
     }
@@ -190,6 +190,18 @@ a:active { text-decoration: none; }
 
     #mobile-menu.is-active .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
+    }
+    #contact{
+        background-color: red;
+    }
+
+    #contact iframe {
+    grid-row: 4/5;
+    grid-column: 2/3;
+    height: 300px;
+    width: 500px;
+    justify-self: flex-start;
+    padding-left: 30px;
     }
 }
 .old_school{
@@ -349,7 +361,7 @@ a:active { text-decoration: none; }
 
 #contact{
     grid-area: contact;
-    background-color: rgba(217,221,241,1);
+    background-color: rgba(217,221,41,1);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3,80px) 1fr;
