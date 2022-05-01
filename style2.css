@@ -361,7 +361,7 @@ a:active { text-decoration: none; }
 
 #contact{
     grid-area: contact;
-    background-color: rgba(217,221,41,1);
+    background-color: rgba(217,221,241,1);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3,80px) 1fr;
