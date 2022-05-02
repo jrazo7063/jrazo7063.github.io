@@ -6,13 +6,13 @@
 }
 
 
+
 body{
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 80px 100px 600px 26% 20% 30% 80px;
     grid-template-areas: "header header" "nav nav" "profile profile" "Faves Faves" " about about" "contact contact" "footer footer";
-    height: auto;
 }
 
 header {
@@ -50,13 +50,13 @@ a:active { text-decoration: none; }
     margin: 0 auto;
 }
 
-#navbar-logo {
+.navbar sig {
     justify-self: start;
-    margin-left: 20px;
-}
-
-#navbar-logo {
+    margin-left: 10px;
     cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -105,7 +105,7 @@ a:active { text-decoration: none; }
     .nav-container{
         position: relative;
     }
-
+    
     .nav-menu {
         display: grid;
         grid-template-columns: auto;
@@ -160,7 +160,7 @@ a:active { text-decoration: none; }
         border: none;
         padding: 0;
         border-radius: 0;
-        background-color: rgba(217,221,241,.83);
+        background-color: red;
         color: white;
         transition: all .4s ease-out;
     }
@@ -190,18 +190,6 @@ a:active { text-decoration: none; }
 
     #mobile-menu.is-active .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
-    }
-    #contact{
-        background-color: red;
-    }
-
-    #contact iframe {
-    grid-row: 4/5;
-    grid-column: 2/3;
-    height: 300px;
-    width: 500px;
-    justify-self: flex-start;
-    padding-left: 30px;
     }
 }
 .old_school{
@@ -316,47 +304,39 @@ a:active { text-decoration: none; }
     font-size: 14px;
 }
 
-#about{
-    background: linear-gradient(to top,rgba(217,221,241,.5), rgba(217,221,241,0.1));
+#about {
     grid-area: about;
     display: grid;
     grid-template-rows: 80px 1fr;
-    grid-template-columns: 1fr 1fr;
-    height: 100%;
-    width: auto;
-    overflow: hidden;
+    background:linear-gradient(to top,rgba(217,221,241,.5), rgba(217,221,241,0.1));
 }
 
-#about heading{
-    grid-row: 1/2;
-    grid-column: 1/span 2;
+#about heading {
     display: flex;
+    grid-row: 1/2;
     justify-content: center;
-    align-items: flex-start;
     color: rgba(31,83,160,1);
     text-shadow: 1px 1px black;
-}
-#bio {
-    grid-row: 2/3;
-    grid-column: 1/2;
-    display: flex;
-    height: 50%;
-    max-height: 70%;
-    object-fit: contain;
-    margin-left: 50px;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5vh
+
 }
 
-#about img{
+#about_me {
+    display: inline-flex;
     grid-row: 2/3;
-    grid-column: 2/3;
-    max-height: 70%;
-    max-width: 70%;
-    object-fit: contain;
-    justify-self: center;
-    align-self: top;
+    flex-direction: row;
+    max-height: 100%;
+    justify-content: space-evenly;
+}
+
+#about_txt {
+    max-width: 45%;
+    font-size: max(3vh);
+}
+
+#about_me img{
+    display: flex;
+    max-height: 65%;
+    justify-self: flex-end;
 }
 
 #contact{
@@ -369,6 +349,7 @@ a:active { text-decoration: none; }
     max-height: 100%;
     object-fit: contain;
     justify-content: center;
+    overflow: hidden;
 }
 
 #contact h1 {
@@ -404,6 +385,7 @@ a:active { text-decoration: none; }
     padding-left: 30px;
 }
 
+
 #contact img{
     grid-row: 3/5;
     grid-column: 1/2;
@@ -423,10 +405,238 @@ footer{
     background-color: whitesmoke;
     grid-area: footer;
     display: inline-flex;
+    object-fit: contain;
     align-items: center;
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
 }
 
+footer img{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    display: inline-flex;
+}
 
+@media screen and (max-width: 768px){
+    *{
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+        font-family: Helvetica;
+    }
+    body{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 80px 100px 300px 1500px 800px 700px 130px;
+        grid-template-areas: "header header" "nav nav" "profile profile" "Faves Faves" " about about" "contact contact" "footer footer";
+        max-height: 100%;
+    }
+
+
+    .profile{
+        background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,.4)), url("https://www.dropbox.com/s/5d4dlatysyxq29j/background.jpg?raw=1");
+        background-position: 50% 30%;
+        background-size: 100%;
+        grid-area: profile;
+        object-fit: contain;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        grid-template-rows: repeat(4, 25%);
+        height: 100%;
+        width: auto;
+        overflow: hidden;
+    }
+
+    .profile strong{
+        grid-row: 2/span 1;
+        grid-column: 1/2;
+        align-self: flex-end;
+        font-size: 12vmin;
+        font-family: Helvetica;
+        color: rgba(31,83,160,1);
+        padding-left: 5%;
+      }
+    
+    .profile em {
+        grid-row: 3/span 1;
+        grid-column: 1/2;
+        padding-left: 5%;
+        font-size: 5vmin;
+    }
+
+    .Faves{
+        grid-area: Faves;
+        max-height: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 20%);
+        grid-template-rows: 160px 1fr;
+        background:linear-gradient(to bottom,rgba(217,221,241,.5), rgba(217,221,241,0.1));
+    }
+    
+    .Faves heading {
+        grid-row: 1/2;
+        grid-column: 1/span 5;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        padding-top: 5px;
+    }
+    .Faves heading h1 {
+        display: flex;
+        justify-content: center;
+        color: rgba(31,83,160,1);
+        text-shadow: 1px 1px black;
+    }
+    
+    .Faves heading p {
+        color: black;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+    }
+    
+    .Faves section{
+        grid-row: 2/3;
+        grid-column: 1/ span 5;
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        object-fit: contain;
+        max-height: 100%;
+    }
+    
+    .houses-cell {
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.6);
+        max-width: 200px;
+        max-height: 300px;
+        flex-wrap: wrap;
+        margin: 10px;
+        background-color: white;
+    }
+    
+    .houses-cell img {
+        display: flex;
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .houses-cell_text {
+        padding: 5px;
+        font-size: 14px;
+    }    
+
+    #about {
+        grid-area: about;
+        display: grid;
+        max-height: 100%;
+        justify-self: flex-end;
+        grid-template-rows: 80px 1fr;
+        object-fit: contain;
+        background:linear-gradient(to top,rgba(217,221,241,.5), rgba(217,221,241,0.1));
+    }
+    
+    #about heading {
+        display: flex;
+        grid-row: 1/2;
+        justify-content: center;
+        align-self: flex-end;
+        color: rgba(31,83,160,1);
+        text-shadow: 1px 1px black;
+        max-height: 60px;
+    }
+    
+    #about_me {
+        display: flex;
+        justify-items: center;
+        align-self: center;
+        grid-row: 2/3;
+        flex-direction: column;
+        max-height: 80%;
+        max-width: 100%;
+    }
+    
+    #about_txt {
+        max-width: 100%;
+        max-height: 50%;
+        font-size: 4.5vmin;
+        display: flex;
+        align-content:flex-start;
+        margin: 5px;
+        margin-left: 10px;
+    }
+    
+    #about_me img{
+        display: flex;
+        max-height: 65%;
+        max-width: 50%;
+        align-self: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+
+    #contact iframe {
+        grid-row: 4/5;
+        grid-column: 1/3;
+        max-height: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-self: center;
+        margin-right: 40px;
+        object-fit: contain;
+    }
+
+    #contact p {
+        grid-row: 3/4;
+        grid-column: 1/3;
+        margin-right: 25px;
+        margin-left: 25px;
+        max-width: 100%;
+        align-self: flex-end;
+        justify-content: flex-start;
+        font-size: 2.5vh;
+    }
+
+    #contact img{
+        display: none;
+    }
+
+    footer{
+        background-color: whitesmoke;
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2 1fr);
+    }
+    
+    footer img{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        max-height: 50%;
+        object-fit: contain;
+        display: inline-flex;
+    }
+
+    footer p {
+        grid-row: 1/2;
+        grid-column: 2/3;
+        font-size: 16px;
+        justify-self: center;
+    }
+
+    footer socialM{
+        display: flex;
+        grid-row: 2/3;
+        grid-column: 1/2;
+        justify-content: center;
+        align-self: center;
+    }
+    .old_school{
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+}
